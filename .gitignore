@@ -2,3 +2,4 @@ slack-notification-2e37a7db5cb9.json
 csr.pem
 key.pem
 server.crt
+node_modules
