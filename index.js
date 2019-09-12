@@ -65,8 +65,8 @@ jwtClient.authorize((error, tokens) => {
       var testData = [];
       while (analyticsData.rows[i]) {
         testData[i] = {
-          title: analyticsData.rows[i].dimensions[0],
-          value: analyticsData.rows[i].metrics[0].values[0]
+          title: i + 1 + '. ' + analyticsData.rows[i].dimensions[0],
+          value: 'Pageviews: ' + analyticsData.rows[i].metrics[0].values[0]
         };
         i++;
       }
@@ -82,11 +82,12 @@ const sendToSlack = data => {
       uri: keys.slackWebhookUrl,
       headers: { 'Content-Type': 'application/json' },
       json: {
-        username: 'Test App',
+        icon_emoji: ':pushpin:',
+        username: 'Google Analytics Notifier',
         attachments: [
           {
             fallback: 'fallback Test',
-            pretext: 'Weekly Google Analytics Norification!',
+            pretext: 'Here is a Weekly Google Analytics summary!',
             color: '#79CDFD',
             fields: data
           }
