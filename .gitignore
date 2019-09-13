@@ -3,3 +3,5 @@ csr.pem
 key.pem
 server.crt
 node_modules
+dev.js
+prod.js

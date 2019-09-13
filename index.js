@@ -4,7 +4,7 @@ var analytics = google.analyticsreporting('v4');
 var request = require('request');
 var moment = require('moment');
 
-var keys = require('./slack-notification-2e37a7db5cb9.json');
+var keys = require('./config/keys');
 
 formatPeriod = () => {
   // Set a endDate
@@ -40,7 +40,7 @@ jwtClient.authorize((error, tokens) => {
       resource: {
         reportRequests: [
           {
-            viewId: keys.viewId,
+            viewId: keys.view_id,
             dateRanges: [
               {
                 startDate: period.startDate,
@@ -79,7 +79,7 @@ jwtClient.authorize((error, tokens) => {
 const sendToSlack = data => {
   request.post(
     {
-      uri: keys.slackWebhookUrl,
+      uri: keys.slack_webhook_uri,
       headers: { 'Content-Type': 'application/json' },
       json: {
         icon_emoji: ':pushpin:',
