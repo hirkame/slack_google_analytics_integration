@@ -6,12 +6,23 @@ var moment = require('moment');
 
 var keys = require('./config/keys');
 
-formatPeriod = () => {
-  // Set a endDate
+formatPeriod = period => {
+  // If you want to set weekly-base notification...
+  if (period === 'weekly') {
+    // Set a endDate
+    var endDate = moment().format('YYYY-MM-DD');
+    // set a startDate one week ago
+    var startDate = moment()
+      .add(-7, 'days')
+      .format('YYYY-MM-DD');
+
+    return { startDate, endDate };
+  }
+
+  // Default is the daily notification.
   var endDate = moment().format('YYYY-MM-DD');
-  // set a startDate one week ago
   var startDate = moment()
-    .add(-7, 'days')
+    .add(-1, 'days')
     .format('YYYY-MM-DD');
 
   // return endDate and startDate
@@ -87,7 +98,7 @@ const sendToSlack = data => {
         attachments: [
           {
             fallback: 'fallback Test',
-            pretext: 'Here is a Weekly Google Analytics summary!',
+            pretext: 'Here is a Google Analytics summary!',
             color: '#79CDFD',
             fields: data
           }
