@@ -21,7 +21,7 @@ formatPeriod = () => {
 var jwtClient = new google.auth.JWT(
   keys.client_email,
   null,
-  keys.private_key,
+  keys.private_key.replace(/\\n/g, '\n'),
   ['https://www.googleapis.com/auth/analytics.readonly'],
   null
 );
