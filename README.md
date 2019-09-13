@@ -23,10 +23,13 @@ Send PageViews ranking to Slack from Google Analytics.
 
 ## Deploy on Heroku
 * Push your codes onto Heroku. 
+* Set environment variables from setting.
+![environment_variable](https://user-images.githubusercontent.com/38170678/64870568-7b0a3280-d67e-11e9-8b20-b71090dfe232.png)
 * Setup the scheduler. 
 
 # References
 @nishii 「Node.jsでGoogle AnalyticsのPV数を取得」 on Qiita (May 21, 2018)
 https://qiita.com/nishii/items/b33f217c0a0521d82093
+
 modeo.co "Heroku Scheduler with Node.js Tutorial" (January 08, 2015)
 http://www.modeo.co/blog/2015/1/8/heroku-scheduler-with-nodejs-tutorial
