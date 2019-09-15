@@ -97,14 +97,18 @@ const sendToSlack = data => {
       uri: keys.slack_webhook_uri,
       headers: { 'Content-Type': 'application/json' },
       json: {
-        icon_emoji: ':pushpin:',
+        icon_emoji: ':kame:',
         username: 'Google Analytics Notifier',
         attachments: [
           {
             fallback: 'fallback Test',
-            pretext: 'Here is a Google Analytics summary!',
+            author_name: 'Hiroki Kameyama',
+            author_link: 'http://twitter.com/hirkame',
+            title: 'Yesterday Pageview Ranking!',
+            title_link: 'https://analytics.google.com/analytics/web/',
             color: '#79CDFD',
-            fields: data
+            fields: data,
+            footer: 'Google Analytics x Slack'
           }
         ]
       }
