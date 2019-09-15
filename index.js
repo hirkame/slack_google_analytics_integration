@@ -10,19 +10,23 @@ formatPeriod = period => {
   // If you want to set weekly-base notification...
   if (period === 'weekly') {
     // Set a endDate
-    var endDate = moment().format('YYYY-MM-DD');
+    var endDate = moment()
+      .add(-1, 'days')
+      .format('YYYY-MM-DD');
     // set a startDate one week ago
     var startDate = moment()
-      .add(-7, 'days')
+      .add(-8, 'days')
       .format('YYYY-MM-DD');
 
     return { startDate, endDate };
   }
 
   // Default is the daily notification.
-  var endDate = moment().format('YYYY-MM-DD');
-  var startDate = moment()
+  var endDate = moment()
     .add(-1, 'days')
+    .format('YYYY-MM-DD');
+  var startDate = moment()
+    .add(-2, 'days')
     .format('YYYY-MM-DD');
 
   // return endDate and startDate
