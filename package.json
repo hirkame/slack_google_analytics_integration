@@ -21,6 +21,8 @@
     "googleapis": "^43.0.0",
     "moment": "^2.29.1",
     "node-cron": "^2.0.3",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "json-bigint": ">=1.0.0",
+    "node-forge": ">=1.0.0"
   }
 }
